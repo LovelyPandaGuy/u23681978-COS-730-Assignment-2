@@ -26,7 +26,6 @@ class Validator
     public String validateFormat(String data) 
     {
         System.out.println("Validator: validateFormat(data)");
-        // Return "valid" or "invalid" to test different diagram paths
         return "valid"; 
     }
 }
@@ -34,7 +33,6 @@ class Validator
 class Reviewer 
 {
     private String name;
-    // The Reviewer needs a reference to the manager to "call back"
     private EvaluationManager manager;
 
     public Reviewer(String name) 
@@ -121,7 +119,7 @@ class EvaluationManager
         
         for(Reviewer r : reviewers) 
         {
-            r.setEvalManager(this); // Connecting them
+            r.setEvalManager(this); 
             int score = r.performReview(); 
              
         }
@@ -130,7 +128,6 @@ class EvaluationManager
         checkConsensus();
         applyRules();
 
-        // Alt block: logic based on outcome
         String outcome = "accepted"; // Mocked decision
         NotificationService ns = new NotificationService();
         
