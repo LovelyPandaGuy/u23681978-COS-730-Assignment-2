@@ -5,11 +5,11 @@ enum OutcomeType { ACCEPT, REVISE, REJECT }
 
 class DecisionService 
 {
-    public OutcomeType getOutcome(double avgScore, boolean consensus, boolean violations) {
-        if (violations) return OutcomeType.REJECT; // Rule 5
-        if (avgScore >= 75 && consensus) return OutcomeType.ACCEPT; // Rule 2
-        // Rules 3 & 4: (Score >= 75 but no consensus) OR (Score < 75 but consensus)
-        return OutcomeType.REVISE; //
+    public OutcomeType getOutcome(double avgScore, boolean consensus, boolean violations) 
+    {
+        if (violations) return OutcomeType.REJECT;
+        if (avgScore >= 75 && consensus) return OutcomeType.ACCEPT;
+        return OutcomeType.REVISE;
     }
 }
 
